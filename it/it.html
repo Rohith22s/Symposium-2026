@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Arena | INFINITE TECHFEST' 26</title>
+  <meta name="description"
+    content="IT Department events at INFINITE TECHFEST' 26: Tech Talks, Innovation Arena, Visual Vision, Code Strom, and Web Wizards.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <canvas id="webgl-bg"></canvas>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+  <header class="hud-header">
+    <a href="../home page/index.html" class="brand glass">
+      <div class="brand-icon">◈</div>
+      <div>
+        <strong>R P SARATHY</strong>
+        <span>INSTITUTE OF TECHNOLOGY</span>
+      </div>
+    </a>
+
+    <nav class="main-nav glass">
+      <a href="../home page/index.html">HOME</a>
+      <a href="#events">EVENTS</a>
+      <a href="#coordinators">COORDINATORS</a>
+    </nav>
+
+    <div class="hud-status glass">
+      <span class="status-dot"></span>
+      <span>SYSTEM ONLINE</span>
+    </div>
+  </header>
+
+  <div class="dept-switcher glass">
+    <a href="../cse/cse.html">01 // CSE</a>
+    <a href="../ai&ds/aids.html">02 // AI & DS</a>
+    <a class="active" href="#">03 // IT</a>
+    <a href="../ece/ece.html">04 // ECE</a>
+    <a href="../cyber/cyber.html">05 // CYBER</a>
+    <a href="../eee/eee.html">06 // EEE</a>
+    <a href="../mech/mech.html">07 // MECH</a>
+    <a href="../s&h/s&h.html">08 // S & H</a>
+  </div>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-content">
+        <a class="back-link" href="../home page/index.html">← RETURN TO MAIN PORTAL</a>
+        <div class="eyebrow"><span></span> DEPARTMENT ARENA 03 // IT</div>
+
+        <h1>INFORMATION <em>&amp;</em><br><span>TECHNOLOGY</span></h1>
+
+        <p class="hero-description">
+          Pioneering the web ecosystem, modern cloud frameworks, full-stack architectures,
+          rapid code debugging, and digital innovation. Show your engineering prowess.
+        </p>
+
+        <div class="stats">
+          <div><b>05</b><small>CHAMPIONSHIP EVENTS</small></div>
+          <div><b>₹150</b><small>REGISTRATION FEE</small></div>
+        </div>
+
+        <button class="cyber-btn" onclick="openRegisterModal('IT Department')">
+          <span>⚡ REGISTER FOR IT</span><i>→</i>
+        </button>
+      </div>
+
+      <div class="hero-terminal glass">
+        <div class="terminal-top">
+          <span>IT_CORE // LIVE FEED</span>
+          <span class="terminal-live">● LIVE</span>
+        </div>
+        <div class="terminal-body">
+          <div class="it-stack-wrap" id="itStackWrap">
+            <canvas id="cloudStackCanvas"></canvas>
+            <div class="it-core-badge">
+              <span class="pulse-beacon"></span>
+              <span>CLOUD DATA MATRIX // v3.0</span>
+            </div>
+          </div>
+          <div class="terminal-lines">
+            <p><b>&gt;</b> deploying_cloud_cluster.sh</p>
+            <p><b>&gt;</b> microservices_mesh: <span>HEALTHY (99.9%)</span></p>
+            <p><b>&gt;</b> database_nodes: <span>SYNCHRONIZED</span></p>
+            <p><b>&gt;</b> throughput: <span>10.4 GB/s [OPTIMAL]</span></p>
+            <p><b>&gt;</b> active_developers: <span id="counter">040+</span></p>
+            <p><b>&gt;</b> status: <span class="blink">CLUSTER OPERATIONAL_</span></p>
+          </div>
+        </div>
+        <div class="terminal-footer">
+          <span>DRAG / SCROLL TO EXPLORE</span>
+          <span>SYS.IT.03</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="content-section">
+      <div class="section-heading">
+        <span>// COMPETITION TRACKS</span>
+        <h2>OFFICIAL <strong>EVENTS</strong></h2>
+        <p>Five high-intensity competition modules engineered by the Department of Information Technology.</p>
+      </div>
+
+      <div class="events-grid">
+        <article class="event-card">
+          <div class="event-top"><b>01</b><span>TECHNICAL // TALK</span></div>
+          <h3>PAPER PRESENTATION <i>(TECH TALKS)</i></h3>
+          <p>Present papers on Full Stack architectures, Cloud Native DevOps, 5G/6G communication paradigms, edge
+            telemetry, and enterprise microservices.</p>
+          <div class="meta"><span>◷ 1–3 MEMBERS</span><span>▣ 10 OCT 2026</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Tech Talks (Paper Presentation)','10:45 AM - 01:15 PM','IT Seminar Hall',['Slide count: Max 12 slides','Presentation time: 7 mins + 3 mins Q&A','Submit PPT & PDF document before 10 Oct 2026','Bring presentation on USB drive as fallback'])">VIEW
+              RULES</button>
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Tech Talks (Paper Presentation)')">REGISTER</button>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-top"><b>02</b><span>INNOVATION // ARENA</span></div>
+          <h3>PROJECT EXPO <i>(INNOVATION ARENA)</i></h3>
+          <p>Showcase working software systems, cloud dashboards, IoT smart grids, automated dev tools, or progressive
+            web apps to technical jury members.</p>
+          <div class="meta"><span>◷ UP TO 4 MEMBERS</span><span>◇ HARDWARE / SOFTWARE</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Project Expo (Innovation Arena)','02:00 PM - 03:45 PM','IT Innovation Arena',['Live functional execution is mandatory','Bring your own laptops and required hardware peripherals','Stalls and power sockets will be allocated upon check-in','Judged on originality, tech depth, and social impact'])">VIEW
+              RULES</button>
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Project Expo (Innovation Arena)')">REGISTER</button>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-top"><b>03</b><span>VISUAL // VISION</span></div>
+          <h3>POSTER PRESENTATION <i>(VISUAL VISION)</i></h3>
+          <p>Synthesize emerging technological paradigms into visually compelling infographical charts, diagrams, and
+            posters. Explain your design thinking to visitors.</p>
+          <div class="meta"><span>◷ 1–2 MEMBERS</span><span>▣ A1 / A2 SHEET</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Poster Presentation (Visual Vision)','11:00 AM - 12:45 PM','Campus Gallery Hall',['Handmade or digitally printed posters accepted','Theme: Next-Gen Computing & Sustainable Tech','Judging based on clarity, graphical presentation, and verbal briefing','Individual or Duo participation'])">VIEW
+              RULES</button>
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Poster Presentation (Visual Vision)')">REGISTER</button>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-top"><b>04</b><span>CODE // DEBUGGING</span></div>
+          <h3>CODE DEBUGGING <i>(CODE STROM)</i></h3>
+          <p>Brave the storm! Unravel spaghetti code, locate compilation and runtime faults, and optimize degraded
+            codebases under strict countdown pressure.</p>
+          <div class="meta"><span>◷ 2 ROUNDS</span><span>&lt;/&gt; C / C++ / JAVA / PYTHON</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Code Debugging (Code Strom)','11:15 AM - 12:45 PM','IT Lab 2',['Round 1: Rapid error spotting (MCQ & short fix)','Round 2: Fix 4 live broken programs within 45 minutes','Individual participation only','Internet or mobile phones not allowed'])">VIEW
+              RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Code Debugging (Code Strom)')">REGISTER</button>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-top"><b>05</b><span>FRONTEND // MASTERY</span></div>
+          <h3>WEB DESIGN <i>(WEB WIZARDS)</i></h3>
+          <p>Cast your digital spells! Build responsive, ultra-slick landing pages from scratch with modern HTML, CSS,
+            JavaScript, animations, and micro-interactions.</p>
+          <div class="meta"><span>◷ 90 MINUTES</span><span>◎ HTML / CSS / JS</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Web Design (Web Wizards)','02:00 PM - 03:30 PM','Web Technology Lab',['Topic revealed at the venue','Pure HTML/CSS/JS or Tailwind permitted','Judged on responsive design, aesthetics, and code elegance','Team of 1 or 2 members'])">VIEW
+              RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Web Design (Web Wizards)')">REGISTER</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="coordinators" class="content-section coordinators">
+      <div class="section-heading">
+        <span>// DEPARTMENT CONTACTS</span>
+        <h2>IT <strong>COMMAND CENTRE</strong></h2>
+        <p>Contact the department coordinators for submissions, guidelines and venue assistance.</p>
+      </div>
+
+      <div class="coord-grid">
+        <div class="coord-card glass">
+          <span>STAFF CO-ORDINATOR</span>
+          <h3>Mrs. A. Santhi</h3>
+          <p>Assistant Professor / Dept of IT</p>
+          <div><a href="tel:8667845282">☎ 86678 45282</a><a href="https://wa.me/918667845282" target="_blank">◉
+              WHATSAPP</a></div>
+        </div>
+        <div class="coord-card glass">
+          <span>STUDENT CO-ORDINATOR</span>
+          <h3>Ms. G. Akshaya</h3>
+          <p>Final Year (IV / IT)</p>
+          <div><a href="tel:6381761876">☎ 63817 61876</a><a href="https://wa.me/916381761876" target="_blank">◉
+              WHATSAPP</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal glass">
+      <button class="close" onclick="closeModals()">×</button>
+      <span class="modal-tag">// OFFICIAL REGISTRATION</span>
+      <h2>ACCESS <strong>GRANTED</strong></h2>
+      <p id="registerText">Registration for IT events.</p>
+      <div class="modal-info">REGISTRATION FEE: <strong>₹150/- ONLY</strong></div>
+      <a class="cyber-btn full" href="https://rpsitsymposium.netlify.app" target="_blank">OPEN REGISTRATION FORM →</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="rulesModal">
+    <div class="modal glass">
+      <button class="close" onclick="closeModals()">×</button>
+      <span class="modal-tag">// EVENT PROTOCOL</span>
+      <h2 id="rulesTitle">EVENT DETAILS</h2>
+      <div class="rule-meta"><span id="rulesTime"></span><span id="rulesVenue"></span></div>
+      <ul id="rulesBody"></ul>
+      <button class="cyber-btn full" onclick="closeModals()">ACKNOWLEDGE PROTOCOL</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

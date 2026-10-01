@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EEE Arena | INFINITE TECHFEST' 26</title>
+
+  <meta name="description"
+        content="EEE Department events at INFINITE TECHFEST' 26">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <canvas id="webgl-bg"></canvas>
+
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+
+  <!-- HEADER -->
+  <header class="hud-header">
+
+    <a href="../home page/index.html" class="brand glass">
+
+      <div class="brand-icon">◈</div>
+
+      <div>
+        <strong>R P SARATHY</strong>
+        <span>INSTITUTE OF TECHNOLOGY</span>
+      </div>
+
+    </a>
+
+
+    <nav class="main-nav glass">
+
+      <a href="../home page/index.html">HOME</a>
+
+      <a href="#events">EVENTS</a>
+
+      <a href="#coordinators">COORDINATORS</a>
+
+    </nav>
+
+
+    <div class="hud-status glass">
+
+      <span class="status-dot"></span>
+
+      <span>SYSTEM ONLINE</span>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- DEPARTMENT SWITCHER -->
+
+  <div class="dept-switcher glass">
+
+    <a href="../cse/cse.html">01 // CSE</a>
+
+    <a href="../ai&ds/aids.html">02 // AI & DS</a>
+
+    <a href="../it/it.html">03 // IT</a>
+
+    <a href="../ece/ece.html">04 // ECE</a>
+
+    <a href="../cyber/cyber.html">05 // CYBER</a>
+
+    <a class="active" href="#">06 // EEE</a>
+
+    <a href="../mech/mech.html">07 // MECH</a>
+
+    <a href="../s&h/s&h.html">08 // S & H</a>
+
+  </div>
+
+
+
+  <main id="top">
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero section-grid">
+
+      <div class="hero-content">
+
+        <a class="back-link" href="../home page/index.html">
+          ← RETURN TO MAIN PORTAL
+        </a>
+
+
+        <div class="eyebrow">
+
+          <span></span>
+
+          DEPARTMENT ARENA 06 // EEE
+
+        </div>
+
+
+        <h1>
+          ELECTRICAL ELECTRONICS <em>&amp;</em><br>
+          <span>ENGINEERING</span>
+        </h1>
+
+
+        <p class="hero-description">
+
+          Explore technical creativity through paper presentation,
+          project innovation, circuit designing, circuit debugging
+          and technical quiz challenges.
+
+        </p>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+          <div>
+            <b>05</b>
+            <small>TECHNICAL EVENTS</small>
+          </div>
+
+          <div>
+            <b>₹150</b>
+            <small>REGISTRATION FEE</small>
+          </div>
+
+        </div>
+
+
+        <!-- REGISTER BUTTON -->
+
+        <button
+          class="cyber-btn"
+          onclick="openRegisterModal('EEE Department')">
+
+          <span>⚡ REGISTER FOR EEE</span>
+
+          <i>→</i>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- TERMINAL -->
+
+      <div class="hero-terminal glass">
+
+        <div class="terminal-top">
+
+          <span>EEE_CORE // LIVE FEED</span>
+
+          <span class="terminal-live">
+            ● LIVE
+          </span>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+          <div class="eee-torus-wrap" id="eeeTorusWrap">
+            <canvas id="eeeTorusCanvas"></canvas>
+            <div class="eee-core-badge">
+              <span class="pulse-beacon"></span>
+              <span>TESLA FLUX REACTOR // 440 kV GRID</span>
+            </div>
+          </div>
+
+          <div class="terminal-lines">
+            <p><b>&gt;</b> initializing_grid_telemetry.py</p>
+            <p><b>&gt;</b> grid_frequency: <span>50.00 Hz [LOCKED]</span></p>
+            <p><b>&gt;</b> electromagnetic_flux: <span>440 kV [OPTIMAL]</span></p>
+            <p><b>&gt;</b> power_factor: <span>0.99 [SYNCHRONIZED]</span></p>
+            <p><b>&gt;</b> eee_engineers: <span id="counter">040+</span></p>
+            <p><b>&gt;</b> status: <span class="blink">PLASMA REACTOR ARMED_</span></p>
+          </div>
+
+        </div>
+
+
+        <div class="terminal-footer">
+
+          <span>
+            DRAG / SCROLL TO EXPLORE
+          </span>
+
+          <span>
+            SYS.EEE.06
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- EVENTS -->
+
+    <section id="events" class="content-section">
+
+
+      <div class="section-heading">
+
+        <span>
+          // EEE COMPETITION TRACKS
+        </span>
+
+        <h2>
+          OFFICIAL
+          <strong>EEE EVENTS</strong>
+        </h2>
+
+        <p>
+          Five technical events organized by the
+          Department of Electrical & Electronics Engineering.
+        </p>
+
+      </div>
+
+
+
+      <div class="events-grid">
+
+
+        <!-- EVENT 01 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+
+            <b>01</b>
+
+            <span>
+              RESEARCH // PRESENTATION
+            </span>
+
+          </div>
+
+
+          <h3>
+            PAPER PRESENTATION
+          </h3>
+
+
+          <p>
+
+            Present your technical paper and showcase
+            innovative ideas in the field of Electrical
+            & Electronics Engineering.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ PAPER PRESENTATION
+            </span>
+
+            <span>
+              ▣ SUBMISSION: 10 OCT 2026
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+                'Paper Presentation',
+                'Schedule not specified',
+                'Venue not specified',
+                [
+                  'Last date for paper submission: 10 Oct 2026',
+                  'Registration fee: ₹150/- only',
+                  'Event organized by the Department of Electrical & Electronics Engineering'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Paper Presentation'
+              )">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- EVENT 02 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+
+            <b>02</b>
+
+            <span>
+              PROJECT // EXPO
+            </span>
+
+          </div>
+
+
+          <h3>
+            POWER AND INNOVATION
+            <i>(PROJECT EXPO)</i>
+          </h3>
+
+
+          <p>
+
+            Showcase an innovative project and demonstrate
+            practical ideas related to power and electrical
+            technology.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ PROJECT EXPO
+            </span>
+
+            <span>
+              ◇ POWER &amp; INNOVATION
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+                'Power and Innovation (Project Expo)',
+                'Schedule not specified',
+                'Venue not specified',
+                [
+                  'Project Expo event under the EEE Department',
+                  'Registration fee: ₹150/- only',
+                  'Detailed event rules are not provided in the poster'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Power and Innovation (Project Expo)'
+              )">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- EVENT 03 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+
+            <b>03</b>
+
+            <span>
+              CIRCUIT // DESIGNING
+            </span>
+
+          </div>
+
+
+          <h3>
+            BRAIN WIRED
+            <i>(CIRCUIT DESIGNING)</i>
+          </h3>
+
+
+          <p>
+
+            Demonstrate circuit-designing knowledge
+            and technical problem-solving skills.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ CIRCUIT DESIGNING
+            </span>
+
+            <span>
+              ▣ EEE TECHNICAL EVENT
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+                'Brain Wired (Circuit Designing)',
+                'Schedule not specified',
+                'Venue not specified',
+                [
+                  'Circuit designing event under the EEE Department',
+                  'Registration fee: ₹150/- only',
+                  'Detailed event rules are not provided in the poster'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Brain Wired (Circuit Designing)'
+              )">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- EVENT 04 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+
+            <b>04</b>
+
+            <span>
+              CIRCUIT // DEBUGGING
+            </span>
+
+          </div>
+
+
+          <h3>
+            WIRE WARS
+            <i>(CIRCUIT DEBUGGING)</i>
+          </h3>
+
+
+          <p>
+
+            Test your ability to identify and debug
+            faults in electrical and electronic circuits.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ CIRCUIT DEBUGGING
+            </span>
+
+            <span>
+              ◇ EEE TECHNICAL EVENT
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+                'Wire Wars (Circuit Debugging)',
+                'Schedule not specified',
+                'Venue not specified',
+                [
+                  'Circuit debugging event under the EEE Department',
+                  'Registration fee: ₹150/- only',
+                  'Detailed event rules are not provided in the poster'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Wire Wars (Circuit Debugging)'
+              )">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- EVENT 05 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+
+            <b>05</b>
+
+            <span>
+              QUIZ // TECHNICAL
+            </span>
+
+          </div>
+
+
+          <h3>
+            QUIZTRONIC
+            <i>(TECHNICAL QUIZ)</i>
+          </h3>
+
+
+          <p>
+
+            Challenge your technical knowledge through
+            an electronics and electrical engineering
+            themed quiz.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ TECHNICAL QUIZ
+            </span>
+
+            <span>
+              ◎ EEE KNOWLEDGE
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+                'Quiztronic (Technical Quiz)',
+                'Schedule not specified',
+                'Venue not specified',
+                [
+                  'Technical quiz event under the EEE Department',
+                  'Registration fee: ₹150/- only',
+                  'Detailed event rules are not provided in the poster'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Quiztronic (Technical Quiz)'
+              )">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- COORDINATORS -->
+
+    <section
+      id="coordinators"
+      class="content-section coordinators">
+
+
+      <div class="section-heading">
+
+        <span>
+          // EEE DEPARTMENT CONTACTS
+        </span>
+
+        <h2>
+          EEE
+          <strong>COMMAND CENTRE</strong>
+        </h2>
+
+        <p>
+          Contact the EEE department coordinators
+          for event submissions and registration assistance.
+        </p>
+
+      </div>
+
+
+
+      <div class="coord-grid">
+
+
+        <!-- STAFF -->
+
+        <div class="coord-card glass">
+
+          <span>
+            STAFF CO-ORDINATOR
+          </span>
+
+          <h3>
+            Mr. M. Dineshkumar
+          </h3>
+
+          <p>
+            Assistant Professor / Dept of EEE
+          </p>
+
+
+          <div>
+
+            <a href="tel:9626132311">
+              ☎ 96261 32311
+            </a>
+
+            <a
+              href="https://wa.me/919626132311"
+              target="_blank">
+
+              ◉ WHATSAPP
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- STUDENT -->
+
+        <div class="coord-card glass">
+
+          <span>
+            STUDENT CO-ORDINATOR
+          </span>
+
+          <h3>
+            Mr. G. Santhosh
+          </h3>
+
+          <p>
+            Final Year (IV / EEE)
+          </p>
+
+
+          <div>
+
+            <a href="tel:8667685436">
+              ☎ 86676 85436
+            </a>
+
+            <a
+              href="https://wa.me/918667685436"
+              target="_blank">
+
+              ◉ WHATSAPP
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+
+  <!-- REGISTRATION MODAL -->
+
+  <div
+    class="modal-overlay"
+    id="registerModal">
+
+    <div class="modal glass">
+
+      <button
+        class="close"
+        onclick="closeModals()">
+
+        ×
+
+      </button>
+
+
+      <span class="modal-tag">
+        // OFFICIAL REGISTRATION
+      </span>
+
+
+      <h2>
+        ACCESS
+        <strong>GRANTED</strong>
+      </h2>
+
+
+      <p id="registerText">
+        Registration for EEE events.
+      </p>
+
+
+      <div class="modal-info">
+
+        REGISTRATION FEE:
+        <strong>₹150/- ONLY</strong>
+
+      </div>
+
+
+      <a
+        class="cyber-btn full"
+        href="https://rpsitsymposium.netlify.app"
+        target="_blank">
+
+        OPEN REGISTRATION FORM →
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- RULES MODAL -->
+
+  <div
+    class="modal-overlay"
+    id="rulesModal">
+
+    <div class="modal glass">
+
+      <button
+        class="close"
+        onclick="closeModals()">
+
+        ×
+
+      </button>
+
+
+      <span class="modal-tag">
+        // EVENT PROTOCOL
+      </span>
+
+
+      <h2 id="rulesTitle">
+        EVENT DETAILS
+      </h2>
+
+
+      <div class="rule-meta">
+
+        <span id="rulesTime"></span>
+
+        <span id="rulesVenue"></span>
+
+      </div>
+
+
+      <ul id="rulesBody"></ul>
+
+
+      <button
+        class="cyber-btn full"
+        onclick="closeModals()">
+
+        ACKNOWLEDGE PROTOCOL
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

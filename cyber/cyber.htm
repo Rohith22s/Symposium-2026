@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Security Arena | INFINITE TECHFEST' 26</title>
+  <meta name="description"
+    content="Cyber Security events at INFINITE TECHFEST' 26: Paper Presentation, Cyber Security Quiz, Phishing Website, Cyber Escape Room, and Tech Talks.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <canvas id="webgl-bg"></canvas>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+  <header class="hud-header">
+    <a href="../home page/index.html" class="brand glass">
+      <div class="brand-icon">◈</div>
+      <div>
+        <strong>R P SARATHY</strong>
+        <span>INSTITUTE OF TECHNOLOGY</span>
+      </div>
+    </a>
+
+    <nav class="main-nav glass">
+      <a href="../home page/index.html">HOME</a>
+      <a href="#events">EVENTS</a>
+      <a href="#coordinators">COORDINATORS</a>
+    </nav>
+
+    <div class="hud-status glass">
+      <span class="status-dot"></span>
+      <span>SYSTEM ONLINE</span>
+    </div>
+  </header>
+
+  <div class="dept-switcher glass">
+    <a href="../cse/cse.html">01 // CSE</a>
+    <a href="../ai&ds/aids.html">02 // AI & DS</a>
+    <a href="../it/it.html">03 // IT</a>
+    <a href="../ece/ece.html">04 // ECE</a>
+    <a class="active" href="#">05 // CYBER</a>
+    <a href="../eee/eee.html">06 // EEE</a>
+    <a href="../mech/mech.html">07 // MECH</a>
+    <a href="../s&h/s&h.html">08 // S & H</a>
+  </div>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-content">
+        <a class="back-link" href="../home page/index.html">← RETURN TO MAIN PORTAL</a>
+        <div class="eyebrow"><span></span> DEPARTMENT ARENA 05 // CYBER SECURITY</div>
+
+        <h1>CYBER <em>&amp;</em><br><span>SECURITY</span></h1>
+
+        <p class="hero-description">
+          Unravel cybersecurity threats, cryptography, digital forensics, ethical hacking,
+          anti-phishing defense mechanisms, and tactical cyber escape room operations.
+        </p>
+
+        <div class="stats">
+          <div><b>05</b><small>CHAMPIONSHIP EVENTS</small></div>
+          <div><b>₹150</b><small>REGISTRATION FEE</small></div>
+        </div>
+
+        <button class="cyber-btn" onclick="openRegisterModal('Cyber Security Department')">
+          <span>⚡ REGISTER FOR CYBER</span><i>→</i>
+        </button>
+      </div>
+
+      <div class="hero-terminal glass">
+        <div class="terminal-top">
+          <span>CYBER_CORE // LIVE FEED</span>
+          <span class="terminal-live">● LIVE</span>
+        </div>
+        <div class="terminal-body">
+          <div class="cyber-shield-wrap" id="cyberShieldWrap">
+            <canvas id="cyberShieldCanvas"></canvas>
+            <div class="cyber-core-badge">
+              <span class="pulse-beacon"></span>
+              <span>ZERO-TRUST FIREWALL // AES-256</span>
+            </div>
+          </div>
+          <div class="terminal-lines">
+            <p><b>&gt;</b> initializing_zero_trust_mesh.sh</p>
+            <p><b>&gt;</b> quantum_encryption: <span>AES-256-GCM</span></p>
+            <p><b>&gt;</b> intrusion_prevention: <span>100% ARMED</span></p>
+            <p><b>&gt;</b> threat_scanner: <span>ZERO BREACHES</span></p>
+            <p><b>&gt;</b> cyber_agents: <span id="counter">040+</span></p>
+            <p><b>&gt;</b> status: <span class="blink">FIREWALL LOCKED_</span></p>
+          </div>
+        </div>
+        <div class="terminal-footer">
+          <span>DRAG / SCROLL TO EXPLORE</span>
+          <span>SYS.CYBER.05</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="content-section">
+      <div class="section-heading">
+        <span>// COMPETITION TRACKS</span>
+        <h2>OFFICIAL <strong>EVENTS</strong></h2>
+        <p>Five tactical cyber warfare and defense modules organized by the Department of Cyber Security.</p>
+      </div>
+
+      <div class="events-grid">
+        <!-- EVENT 01: PAPER PRESENTATION -->
+        <article class="event-card">
+          <div class="event-top"><b>01</b><span>RESEARCH // PRESENTATION</span></div>
+          <h3>PAPER PRESENTATION</h3>
+          <p>Present research papers on zero-trust architectures, cloud security, cryptography, ransomware defense, and AI-driven cybersecurity systems.</p>
+          <div class="meta"><span>◷ 1–3 MEMBERS</span><span>▣ SUBMISSION: 10 OCT 2026</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Paper Presentation (Cyber Security)','10:00 AM - 01:00 PM','Cyber Seminar Hall',['Topic must be related to Cyber Security, Cryptography, or Network Defense','Teams of 1 to 3 members permitted','Presentation time: 8 mins presentation + 2 mins Q&A','Submit PPT & abstract on or before 10 Oct 2026','Original content is required; plagiarism strictly penalized'])">VIEW RULES</button>
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Paper Presentation (Cyber Security)')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 02: QUIZ (CYBER SECURITY) -->
+        <article class="event-card">
+          <div class="event-top"><b>02</b><span>INTEL // CHALLENGE</span></div>
+          <h3>QUIZ <i>(CYBER SECURITY)</i></h3>
+          <p>Put your security knowledge to the test across encryption algorithms, network security protocols, forensic techniques, and legendary cyber exploits.</p>
+          <div class="meta"><span>◷ 2 ROUNDS</span><span>◎ SECURITY INTEL</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Quiz (Cyber Security)','11:15 AM - 12:45 PM','Cyber Lab 1',['Round 1: Rapid-fire screening quiz on info security fundamentals and protocols','Round 2: Scenario-based incident triage & cryptanalysis challenge','Teams of 1 to 2 members permitted','Calculators, smartphones, and internet access strictly prohibited'])">VIEW RULES</button>
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Quiz (Cyber Security)')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 03: PHISHING WEBSITE -->
+        <article class="event-card">
+          <div class="event-top"><b>03</b><span>WEB // DEFENSE</span></div>
+          <h3>PHISHING WEBSITE</h3>
+          <p>Analyze spoofed domains, identify social engineering traps, detect fake authentication portals, and evaluate tactical phishing defense strategies.</p>
+          <div class="meta"><span>◷ 60 MINUTES</span><span>⚡ SPOOF DETECTION</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Phishing Website (Detection & Analysis)','02:00 PM - 03:30 PM','Security Analysis Lab',['Inspect live cloned websites and disguised URL attack vectors','Spot indicators of compromise (SSL forgery, DNS anomalies, payload scripts)','Document vulnerabilities and present preventative measures','Judged on detection accuracy, time taken, and mitigation quality'])">VIEW RULES</button>
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Phishing Website')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 04: CYBER ESCAPE ROOM -->
+        <article class="event-card">
+          <div class="event-top"><b>04</b><span>TACTICAL // SURVIVAL</span></div>
+          <h3>CYBER ESCAPE ROOM</h3>
+          <p>Crack encrypted ciphers, escalate terminal privileges, decode hidden steganographic messages, and escape the compromised server before lockdown!</p>
+          <div class="meta"><span>◷ LIVE MISSION</span><span>◈ TIME ATTACK</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Cyber Escape Room','11:00 AM - 01:00 PM','Cyber War Room',['Progressive tiers of terminal puzzles and cryptographic decryption','Each tier unlocked yields critical keys to the next system layer','Fastest escape time under countdown pressure wins the mission','Team size: 2 to 3 members'])">VIEW RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Cyber Escape Room')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 05: TECH TALKS -->
+        <article class="event-card">
+          <div class="event-top"><b>05</b><span>KEYNOTE // INNOVATION</span></div>
+          <h3>TECH TALKS</h3>
+          <p>Deliver presentations on emerging cyber warfare frontiers, quantum encryption, ethical hacking methodologies, and dark web threat intelligence.</p>
+          <div class="meta"><span>◷ 7 MINS TALK</span><span>⚙ THREAT INTEL</span></div>
+          <div class="actions">
+            <button class="outline-btn"
+              onclick="openRulesModal('Tech Talks (Cyber Security)','02:00 PM - 03:45 PM','Cyber AV Hall',['Topic must address modern or future cybersecurity paradigms','Presentation duration: 7 mins presentation + 3 mins Q&A','Audio-visual aids and live demos encouraged','Judged on technical depth, delivery, and audience engagement'])">VIEW RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Tech Talks (Cyber Security)')">REGISTER</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- COORDINATORS -->
+    <section id="coordinators" class="content-section coordinators">
+      <div class="section-heading">
+        <span>// DEPARTMENT CONTACTS</span>
+        <h2>CYBER SECURITY <strong>COMMAND CENTRE</strong></h2>
+        <p>Contact the Cyber Security department coordinators for submissions, rules, and event assistance.</p>
+      </div>
+
+      <div class="coord-grid">
+        <!-- STAFF COORDINATOR -->
+        <div class="coord-card glass">
+          <span>STAFF CO-ORDINATOR</span>
+          <h3>Ms. P. Sathya</h3>
+          <p>AP / CSE(CS) — Dept of Cyber Security</p>
+          <div>
+            <a href="tel:7806829541">☎ 78068 29541</a>
+            <a href="https://wa.me/917806829541" target="_blank">◉ WHATSAPP</a>
+          </div>
+        </div>
+
+        <!-- STUDENT COORDINATOR -->
+        <div class="coord-card glass">
+          <span>STUDENT CO-ORDINATOR</span>
+          <h3>Ms. R. Kavisri</h3>
+          <p>III / Cyber Security</p>
+          <div>
+            <a href="tel:6374794582">☎ 63747 94582</a>
+            <a href="https://wa.me/916374794582" target="_blank">◉ WHATSAPP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal glass">
+      <button class="close" onclick="closeModals()">×</button>
+      <span class="modal-tag">// OFFICIAL REGISTRATION</span>
+      <h2>ACCESS <strong>GRANTED</strong></h2>
+      <p id="registerText">Registration for Cyber Security events.</p>
+      <div class="modal-info">REGISTRATION FEE: <strong>₹150/- ONLY</strong></div>
+      <a class="cyber-btn full" href="https://rpsitsymposium.netlify.app" target="_blank">OPEN REGISTRATION FORM →</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="rulesModal">
+    <div class="modal glass">
+      <button class="close" onclick="closeModals()">×</button>
+      <span class="modal-tag">// EVENT PROTOCOL</span>
+      <h2 id="rulesTitle">EVENT DETAILS</h2>
+      <div class="rule-meta"><span id="rulesTime"></span><span id="rulesVenue"></span></div>
+      <ul id="rulesBody"></ul>
+      <button class="cyber-btn full" onclick="closeModals()">ACKNOWLEDGE PROTOCOL</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

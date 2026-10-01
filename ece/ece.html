@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ECE Arena | INFINITE TECHFEST'26</title>
+
+  <meta name="description"
+        content="Electronics and Communication Engineering events at INFINITE TECHFEST'26">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= BACKGROUND ================= -->
+
+  <canvas id="webgl-bg"></canvas>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="hud-header">
+
+    <a href="../home page/index.html" class="brand glass">
+
+      <div class="brand-icon">◈</div>
+
+      <div>
+        <strong>R P SARATHY</strong>
+        <span>INSTITUTE OF TECHNOLOGY</span>
+      </div>
+
+    </a>
+
+
+    <nav class="main-nav glass">
+
+      <a href="../home page/index.html">HOME</a>
+      <a href="#events">EVENTS</a>
+      <a href="#coordinators">COORDINATORS</a>
+
+    </nav>
+
+
+    <div class="hud-status glass">
+
+      <span class="status-dot"></span>
+      <span>SYSTEM ONLINE</span>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= DEPARTMENT SWITCHER ================= -->
+
+  <div class="dept-switcher glass">
+
+    <a href="../cse/cse.html">01 // CSE</a>
+    <a href="../ai&ds/aids.html">02 // AI & DS</a>
+    <a href="../it/it.html">03 // IT</a>
+    <a class="active" href="#">04 // ECE</a>
+    <a href="../cyber/cyber.html">05 // CYBER</a>
+    <a href="../eee/eee.html">06 // EEE</a>
+    <a href="../mech/mech.html">07 // MECH</a>
+    <a href="../s&h/s&h.html">08 // S & H</a>
+
+  </div>
+
+
+  <main id="top">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero section-grid">
+
+      <div class="hero-content">
+
+        <a class="back-link" href="../home page/index.html">
+          ← RETURN TO MAIN PORTAL
+        </a>
+
+
+        <div class="eyebrow">
+          <span></span>
+          DEPARTMENT ARENA 04 // ECE
+        </div>
+
+
+        <h1>
+          ELECTRONICS &<br>
+          <span>COMMUNICATION ENGINEERING</span>
+        </h1>
+
+
+        <p class="hero-description">
+          Explore electronics, communication, embedded systems,
+          circuit debugging, technical innovation and creative
+          engineering challenges at INFINITE TECHFEST'26.
+        </p>
+
+
+        <div class="stats">
+
+          <div>
+            <b>05</b>
+            <small>CHAMPIONSHIP EVENTS</small>
+          </div>
+
+          <div>
+            <b>₹150</b>
+            <small>REGISTRATION FEE</small>
+          </div>
+
+        </div>
+
+
+        <button class="cyber-btn"
+                onclick="openRegisterModal('ECE Department')">
+
+          <span>⚡ REGISTER FOR ECE</span>
+          <i>→</i>
+
+        </button>
+
+      </div>
+
+
+      <!-- ================= TERMINAL ================= -->
+
+      <div class="hero-terminal glass">
+
+        <div class="terminal-top">
+
+          <span>ECE_CORE // LIVE FEED</span>
+
+          <span class="terminal-live">
+            ● LIVE
+          </span>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+          <div class="ece-chip-wrap" id="eceChipWrap">
+            <canvas id="eceChipCanvas"></canvas>
+            <div class="ece-core-badge">
+              <span class="pulse-beacon"></span>
+              <span>VLSI SILICON CORE // 5.8 GHz RF</span>
+            </div>
+          </div>
+
+          <div class="terminal-lines">
+            <p><b>&gt;</b> initializing_firmware.bin</p>
+            <p><b>&gt;</b> clock_frequency: <span>5.8 GHz [LOCKED]</span></p>
+            <p><b>&gt;</b> rf_transceiver: <span>TX/RX ACTIVE</span></p>
+            <p><b>&gt;</b> vlsi_bus_matrix: <span>SYNCHRONIZED</span></p>
+            <p><b>&gt;</b> ece_engineers: <span id="counter">040+</span></p>
+            <p><b>&gt;</b> status: <span class="blink">CIRCUITS ENERGIZED_</span></p>
+          </div>
+
+        </div>
+
+
+        <div class="terminal-footer">
+
+          <span>
+            DRAG / SCROLL TO EXPLORE
+          </span>
+
+          <span>
+            SYS.ECE.04
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= EVENTS ================= -->
+
+    <section id="events" class="content-section">
+
+      <div class="section-heading">
+
+        <span>
+          // ECE COMPETITION TRACKS
+        </span>
+
+        <h2>
+          OFFICIAL <strong>EVENTS</strong>
+        </h2>
+
+        <p>
+          Five exciting technical events organized by the
+          Department of Electronics & Communication Engineering.
+        </p>
+
+      </div>
+
+
+      <div class="events-grid">
+
+
+        <!-- EVENT 01 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+            <b>01</b>
+            <span>TECHNICAL // PRESENTATION</span>
+          </div>
+
+          <h3>
+            PAPER PRESENTATION
+          </h3>
+
+          <p>
+            Present innovative technical ideas, research concepts
+            and emerging technologies in Electronics and
+            Communication Engineering.
+          </p>
+
+          <div class="meta">
+            <span>◷ TECHNICAL TALK</span>
+            <span>▣ 17 OCT 2026</span>
+          </div>
+
+          <div class="actions">
+
+            <button class="outline-btn"
+              onclick="openRulesModal(
+                'Paper Presentation',
+                'Technical Talk',
+                'ECE Department',
+                [
+                  'Technical presentation based on ECE related topics',
+                  'Participants should prepare their presentation in advance',
+                  'Presentation should be clear and technically relevant',
+                  'Original content is preferred'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Paper Presentation')">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- EVENT 02 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+            <b>02</b>
+            <span>PROJECT // INNOVATION</span>
+          </div>
+
+          <h3>
+            PROTO MANIA
+          </h3>
+
+          <p>
+            Showcase innovative electronic prototypes and
+            engineering projects with practical applications.
+          </p>
+
+          <div class="meta">
+            <span>◷ PROJECT EXPO</span>
+            <span>⚡ PROTOTYPE</span>
+          </div>
+
+          <div class="actions">
+
+            <button class="outline-btn"
+              onclick="openRulesModal(
+                'Proto Mania',
+                'Project Expo',
+                'ECE Department',
+                [
+                  'Participants must present an innovative prototype',
+                  'Working model demonstration is encouraged',
+                  'Explain the circuit, components and applications',
+                  'Judges will evaluate innovation and technical implementation'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Proto Mania')">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- EVENT 03 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+            <b>03</b>
+            <span>CIRCUIT // DEBUGGING</span>
+          </div>
+
+          <h3>
+            CIRCUIT HUNT
+          </h3>
+
+          <p>
+            Find circuit errors, analyze electronic components
+            and solve circuit debugging challenges against time.
+          </p>
+
+          <div class="meta">
+            <span>◷ DEBUGGING</span>
+            <span>⚙ CIRCUITS</span>
+          </div>
+
+          <div class="actions">
+
+            <button class="outline-btn"
+              onclick="openRulesModal(
+                'Circuit Hunt',
+                'Circuit Debugging',
+                'ECE Department',
+                [
+                  'Identify faults in the given electronic circuits',
+                  'Analyze circuit connections and components',
+                  'Participants must debug the circuit within the given time',
+                  'Accuracy and completion time will be considered'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Circuit Hunt')">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- EVENT 04 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+            <b>04</b>
+            <span>STARTUP // INNOVATION</span>
+          </div>
+
+          <h3>
+            STARTUP PITCHING
+          </h3>
+
+          <p>
+            Present your innovative startup idea and explain
+            its technology, problem statement, solution and
+            future potential.
+          </p>
+
+          <div class="meta">
+            <span>◷ PITCH</span>
+            <span>🚀 STARTUP IDEA</span>
+          </div>
+
+          <div class="actions">
+
+            <button class="outline-btn"
+              onclick="openRulesModal(
+                'Startup Pitching',
+                'Startup Pitch',
+                'ECE Department',
+                [
+                  'Present an innovative startup idea',
+                  'Explain the problem and proposed solution',
+                  'Highlight technology and business potential',
+                  'Presentation should be clear and concise'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Startup Pitching')">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- EVENT 05 -->
+
+        <article class="event-card">
+
+          <div class="event-top">
+            <b>05</b>
+            <span>TECHNICAL // QUIZ</span>
+          </div>
+
+          <h3>
+            PICTURE REBUS
+          </h3>
+
+          <p>
+            Test your technical knowledge and logical thinking
+            through an exciting picture-based technical quiz.
+          </p>
+
+          <div class="meta">
+            <span>◷ TECHNICAL QUIZ</span>
+            <span>◎ LOGIC</span>
+          </div>
+
+          <div class="actions">
+
+            <button class="outline-btn"
+              onclick="openRulesModal(
+                'Picture Rebus',
+                'Technical Quiz',
+                'ECE Department',
+                [
+                  'Questions will be presented using pictures and clues',
+                  'Participants must identify the correct technical answer',
+                  'Focus areas may include electronics and communication concepts',
+                  'Accuracy and time will be considered'
+                ]
+              )">
+
+              VIEW RULES
+
+            </button>
+
+            <button class="cyber-btn small"
+              onclick="openRegisterModal('Picture Rebus')">
+
+              REGISTER
+
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= COORDINATORS ================= -->
+
+    <section id="coordinators"
+             class="content-section coordinators">
+
+      <div class="section-heading">
+
+        <span>
+          // ECE DEPARTMENT CONTACTS
+        </span>
+
+        <h2>
+          ECE <strong>COMMAND CENTRE</strong>
+        </h2>
+
+        <p>
+          Contact the ECE coordinators for event details,
+          registration and technical assistance.
+        </p>
+
+      </div>
+
+
+      <div class="coord-grid">
+
+
+        <!-- STAFF COORDINATOR -->
+
+        <div class="coord-card glass">
+
+          <span>
+            STAFF CO-ORDINATOR
+          </span>
+
+          <h3>
+            Mrs. S. Apshanaparvin
+          </h3>
+
+          <p>
+            Assistant Professor / Dept of ECE
+          </p>
+
+          <div>
+
+            <a href="tel:9943044232">
+              ☎ 99430 44232
+            </a>
+
+            <a href="https://wa.me/919943044232"
+               target="_blank">
+              ◉ WHATSAPP
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- STUDENT COORDINATOR -->
+
+        <div class="coord-card glass">
+
+          <span>
+            STUDENT CO-ORDINATOR
+          </span>
+
+          <h3>
+            Ms. T. Harinisree
+          </h3>
+
+          <p>
+            IV / ECE
+          </p>
+
+          <div>
+
+            <a href="tel:7904232400">
+              ☎ 79042 32400
+            </a>
+
+            <a href="https://wa.me/917904232400"
+               target="_blank">
+              ◉ WHATSAPP
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================= REGISTRATION MODAL ================= -->
+
+  <div class="modal-overlay"
+       id="registerModal">
+
+    <div class="modal glass">
+
+      <button class="close"
+              onclick="closeModals()">
+        ×
+      </button>
+
+      <span class="modal-tag">
+        // OFFICIAL REGISTRATION
+      </span>
+
+      <h2>
+        ACCESS <strong>GRANTED</strong>
+      </h2>
+
+      <p id="registerText">
+        Registration for ECE events.
+      </p>
+
+      <div class="modal-info">
+        REGISTRATION FEE:
+        <strong>₹150/- ONLY</strong>
+      </div>
+
+      <a class="cyber-btn full"
+         href="https://rpsitsymposium.netlify.app"
+         target="_blank">
+
+        OPEN REGISTRATION FORM →
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= RULES MODAL ================= -->
+
+  <div class="modal-overlay"
+       id="rulesModal">
+
+    <div class="modal glass">
+
+      <button class="close"
+              onclick="closeModals()">
+        ×
+      </button>
+
+      <span class="modal-tag">
+        // EVENT PROTOCOL
+      </span>
+
+      <h2 id="rulesTitle">
+        EVENT DETAILS
+      </h2>
+
+      <div class="rule-meta">
+
+        <span id="rulesTime"></span>
+
+        <span id="rulesVenue"></span>
+
+      </div>
+
+      <ul id="rulesBody"></ul>
+
+      <button class="cyber-btn full"
+              onclick="closeModals()">
+
+        ACKNOWLEDGE PROTOCOL
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&H Arena | INFINITE TECHFEST' 26</title>
+  <meta name="description" content="Science and Humanities Department events at INFINITE TECHFEST' 26">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <canvas id="webgl-bg"></canvas>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+  <header class="hud-header">
+    <a href="../home page/index.html" class="brand glass">
+      <div class="brand-icon">◈</div>
+      <div>
+        <strong>R P SARATHY</strong>
+        <span>INSTITUTE OF TECHNOLOGY</span>
+      </div>
+    </a>
+
+    <nav class="main-nav glass">
+      <a href="../home page/index.html">HOME</a>
+      <a href="#events">EVENTS</a>
+      <a href="#coordinators">COORDINATORS</a>
+    </nav>
+
+    <div class="hud-status glass">
+      <span class="status-dot"></span>
+      <span>SYSTEM ONLINE</span>
+    </div>
+  </header>
+
+  <div class="dept-switcher glass">
+    <a href="../cse/cse.html">01 // CSE</a>
+    <a href="../ai&ds/aids.html">02 // AI & DS</a>
+    <a href="../it/it.html">03 // IT</a>
+    <a href="../ece/ece.html">04 // ECE</a>
+    <a href="../cyber/cyber.html">05 // CYBER</a>
+    <a href="../eee/eee.html">06 // EEE</a>
+    <a href="../mech/mech.html">07 // MECH</a>
+    <a class="active" href="#">08 // S & H</a>
+  </div>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-content">
+        <a class="back-link" href="../home page/index.html">← RETURN TO MAIN PORTAL</a>
+        <div class="eyebrow"><span></span> DEPARTMENT ARENA 08 // S&H</div>
+
+        <h1>SCIENCE <em>&amp;</em><br><span>HUMANITIES</span></h1>
+        <p class="hero-description">
+           "Humanities without sciences are helpless, sciences without humanities are lifeless"
+        </p>
+
+        <div class="stats">
+          <div><b>04</b><small>CHAMPIONSHIP EVENTS</small></div>
+          <div><b>₹150</b><small>REGISTRATION FEE</small></div>
+        </div>
+
+        <button class="cyber-btn" onclick="openRegisterModal('S&H Department')">
+          <span>⚡ REGISTER FOR S&H </span><i>→</i>
+        </button>
+      </div>
+
+      <div class="hero-terminal glass">
+        <div class="terminal-top">
+          <span>S&H_CORE // LIVE FEED</span>
+          <span class="terminal-live">● LIVE</span>
+        </div>
+        <div class="terminal-body">
+          <div class="sh-atom-wrap" id="shAtomWrap">
+            <canvas id="shAtomCanvas"></canvas>
+            <div class="sh-core-badge">
+              <span class="pulse-beacon"></span>
+              <span>QUANTUM BOHR ATOM // n=3 SHELL</span>
+            </div>
+          </div>
+          <div class="terminal-lines">
+            <p><b>&gt;</b> initializing_quantum_matrix.py</p>
+            <p><b>&gt;</b> planck_constant: <span>6.626e-34 J·s</span></p>
+            <p><b>&gt;</b> orbital_energy: <span>n=3 [EXCITED]</span></p>
+            <p><b>&gt;</b> electron_spin: <span>+1/2 [QUANTIZED]</span></p>
+            <p><b>&gt;</b> science_scholars: <span id="counter">040+</span></p>
+            <p><b>&gt;</b> status: <span class="blink">QUANTUM EQUILIBRIUM_</span></p>
+          </div>
+        </div>
+        <div class="terminal-footer">
+          <span>DRAG / SCROLL TO EXPLORE</span>
+          <span>SYS.S&H.08</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="content-section">
+      <div class="section-heading">
+        <span>// COMPETITION TRACKS</span>
+        <h2>OFFICIAL <strong>EVENTS</strong></h2>
+        <p>Four championship competition modules organized by the Department of Science and Humanities.</p>
+      </div>
+
+      <div class="events-grid">
+        <!-- EVENT 01 -->
+        <article class="event-card">
+          <div class="event-top"><b>01</b><span>PHYSICS // PRESENTATION</span></div>
+          <h3>PAPER PRESENTATION <i>(PHYSICS)</i></h3>
+          <p>Present original research concepts, modern physics principles, and experimental discoveries in Applied Physics and material sciences.</p>
+          <div class="meta"><span>◷ 1–3 MEMBERS</span><span>▣ SUBMISSION: 10 OCT 2026</span></div>
+          <div class="actions">
+            <button class="outline-btn" onclick="openRulesModal('Paper Presentation (Physics)','10:00 AM - 01:00 PM','S&H Seminar Hall',['Presentation based on Physics and Applied Science topics','Teams of 1 to 3 members permitted','Presentation duration: 8 mins presentation + 2 mins Q&A','Submit abstract/PPT on or before 10 Oct 2026','Original work only; plagiarism strictly penalized'])">VIEW RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Paper Presentation (Physics)')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 02 -->
+        <article class="event-card">
+          <div class="event-top"><b>02</b><span>CHEMISTRY // DISPLAY</span></div>
+          <h3>POSTER PRESENTATION <i>(CHEMISTRY)</i></h3>
+          <p>Design and present creative scientific posters addressing chemical innovations, sustainable green chemistry, and materials.</p>
+          <div class="meta"><span>◷ POSTER DISPLAY</span><span>◇ CHEMISTRY &amp; MATERIALS</span></div>
+          <div class="actions">
+            <button class="outline-btn" onclick="openRulesModal('Poster Presentation (Chemistry)','10:30 AM - 12:30 PM','Chemistry Lab / S&H Block',['Poster should focus on Chemistry, Material Science or Green Energy','Standard A1 or A2 poster size recommended','Evaluation based on scientific clarity, presentation and depth','Individual or team participation (up to 2 members)'])">VIEW RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Poster Presentation (Chemistry)')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 03 -->
+        <article class="event-card">
+          <div class="event-top"><b>03</b><span>ORATORY // ENGLISH</span></div>
+          <h3>EXTEMPORE SPEECH <i>(ENGLISH)</i></h3>
+          <p>Showcase spontaneous English fluency, articulation, thought leadership and persuasive speaking skills on on-the-spot topics.</p>
+          <div class="meta"><span>◷ 3-5 MINUTES</span><span>▣ ENGLISH ORATORY</span></div>
+          <div class="actions">
+            <button class="outline-btn" onclick="openRulesModal('Extempore Speech (English)','11:00 AM - 01:00 PM','English Language Lab',['Topic will be allotted on the spot with 2 minutes preparation time','Speaking duration: 3 to 5 minutes','Judged on fluency, content relevance, vocabulary and stage presence','Individual participation only'])">VIEW RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Extempore Speech (English)')">REGISTER</button>
+          </div>
+        </article>
+
+        <!-- EVENT 04 -->
+        <article class="event-card">
+          <div class="event-top"><b>04</b><span>LOGIC // MATHEMATICS</span></div>
+          <h3>MATH PUZZLES &amp; LOGIC QUIZ <i>(MATHS)</i></h3>
+          <p>Test your speed, numerical deduction, quantitative aptitude and logical problem-solving across exciting puzzle rounds.</p>
+          <div class="meta"><span>◷ 2 ROUNDS</span><span>∑ LOGIC &amp; MATHS</span></div>
+          <div class="actions">
+            <button class="outline-btn" onclick="openRulesModal('Math Puzzles & Logic Quiz (Maths)','11:15 AM - 12:45 PM','Mathematics Seminar Hall',['Round 1: Rapid numerical puzzles and quantitative reasoning','Round 2: Advanced logic puzzles and mathematical brainteasers','Calculators and electronic devices are prohibited','Accuracy and completion time decide the winners'])">VIEW RULES</button>
+            <button class="cyber-btn small" onclick="openRegisterModal('Math Puzzles & Logic Quiz (Maths)')">REGISTER</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- COORDINATORS -->
+    <section id="coordinators" class="content-section coordinators">
+      <div class="section-heading">
+        <span>// DEPARTMENT CONTACTS</span>
+        <h2>S&H <strong>COMMAND CENTRE</strong></h2>
+        <p>Contact the Department of Science &amp; Humanities coordinators for event guidelines and registration assistance.</p>
+      </div>
+
+      <div class="coord-grid">
+        <!-- STAFF COORDINATOR -->
+        <div class="coord-card glass">
+          <span>STAFF CO-ORDINATOR</span>
+          <h3>Dr. K. Saranya</h3>
+          <p>Prof / Maths — Dept of S&H</p>
+          <div>
+            <a href="tel:9789158113">☎ 97891 58113</a>
+            <a href="https://wa.me/919789158113" target="_blank">◉ WHATSAPP</a>
+          </div>
+        </div>
+
+        <!-- STUDENT COORDINATOR -->
+        <div class="coord-card glass">
+          <span>STUDENT CO-ORDINATOR</span>
+          <h3>Student Coordinator</h3>
+          <p>I / S&H</p>
+          <div>
+            <a href="tel:9789158113">☎ S&H Helpdesk</a>
+            <a href="https://wa.me/919789158113" target="_blank">◉ WHATSAPP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal glass">
+      <button class="close" onclick="closeModals()">×</button>
+      <span class="modal-tag">// OFFICIAL REGISTRATION</span>
+      <h2>ACCESS <strong>GRANTED</strong></h2>
+      <p id="registerText">Registration for S&H events.</p>
+      <div class="modal-info">REGISTRATION FEE: <strong>₹150/- ONLY</strong></div>
+      <a class="cyber-btn full" href="https://rpsitsymposium.netlify.app" target="_blank">OPEN REGISTRATION FORM →</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="rulesModal">
+    <div class="modal glass">
+      <button class="close" onclick="closeModals()">×</button>
+      <span class="modal-tag">// EVENT PROTOCOL</span>
+      <h2 id="rulesTitle">EVENT DETAILS</h2>
+      <div class="rule-meta"><span id="rulesTime"></span><span id="rulesVenue"></span></div>
+      <ul id="rulesBody"></ul>
+      <button class="cyber-btn full" onclick="closeModals()">ACKNOWLEDGE PROTOCOL</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

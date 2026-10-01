@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MECH Arena | INFINITE TECHFEST' 26</title>
+
+  <meta name="description"
+        content="Mechanical Engineering Department events at INFINITE TECHFEST' 26">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <canvas id="webgl-bg"></canvas>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="hud-header">
+
+    <a href="../home page/index.html" class="brand glass">
+
+      <div class="brand-icon">⚙</div>
+
+      <div>
+        <strong>R P SARATHY</strong>
+        <span>INSTITUTE OF TECHNOLOGY</span>
+      </div>
+
+    </a>
+
+
+    <nav class="main-nav glass">
+
+      <a href="../home page/index.html">HOME</a>
+      <a href="#events">EVENTS</a>
+      <a href="#coordinators">COORDINATORS</a>
+
+    </nav>
+
+
+    <div class="hud-status glass">
+
+      <span class="status-dot"></span>
+      <span>SYSTEM ONLINE</span>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       DEPARTMENT SWITCHER
+  ========================== -->
+
+  <div class="dept-switcher glass">
+
+    <a href="../cse/cse.html">01 // CSE</a>
+    <a href="../ai&ds/aids.html">02 // AI & DS</a>
+    <a href="../it/it.html">03 // IT</a>
+    <a href="../ece/ece.html">04 // ECE</a>
+    <a href="../cyber/cyber.html">05 // CYBER</a>
+    <a href="../eee/eee.html">06 // EEE</a>
+
+    <a class="active" href="#">
+      07 // MECH
+    </a>
+
+    <a href="../s&h/s&h.html">08 // S & H</a>
+
+  </div>
+
+
+
+  <main id="top">
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero section-grid">
+
+      <div class="hero-content">
+
+
+        <a class="back-link" href="../home page/index.html">
+          ← RETURN TO MAIN PORTAL
+        </a>
+
+
+        <div class="eyebrow">
+
+          <span></span>
+
+          DEPARTMENT ARENA 07 // MECH
+
+        </div>
+
+
+        <h1>
+
+          MECHANICAL
+
+          <em>&amp;</em>
+
+          <br>
+
+          <span>ENGINEERING</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+          Showcase your technical knowledge and engineering skills
+          through paper presentation, expert interaction, drafting,
+          technical speaking and engineering quiz challenges.
+
+        </p>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+          <div>
+
+            <b>05</b>
+
+            <small>
+              CHAMPIONSHIP EVENTS
+            </small>
+
+          </div>
+
+
+          <div>
+
+            <b>₹150</b>
+
+            <small>
+              REGISTRATION FEE
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="cyber-btn"
+          onclick="openRegisterModal(
+          'Mechanical Engineering Department'
+          )">
+
+          <span>
+            ⚡ REGISTER FOR MECHANICAL
+          </span>
+
+          <i>→</i>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- =========================
+           TERMINAL
+      ========================== -->
+
+      <div class="hero-terminal glass">
+
+
+        <div class="terminal-top">
+
+          <span>
+            MECH_CORE // LIVE FEED
+          </span>
+
+          <span class="terminal-live">
+            ● LIVE
+          </span>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+
+          <div class="mech-gear-wrap" id="mechGearWrap">
+            <canvas id="mechGearCanvas"></canvas>
+            <div class="mech-core-badge">
+              <span class="pulse-beacon"></span>
+              <span>PLANETARY GEAR DRIVE // 3600 RPM</span>
+            </div>
+          </div>
+
+          <div class="terminal-lines">
+            <p><b>&gt;</b> initializing_kinematic_engine.py</p>
+            <p><b>&gt;</b> rotational_velocity: <span>3600 RPM [LOCKED]</span></p>
+            <p><b>&gt;</b> torque_transmission: <span>850 Nm [OPTIMAL]</span></p>
+            <p><b>&gt;</b> thermal_stress: <span>NOMINAL (42°C)</span></p>
+            <p><b>&gt;</b> mech_engineers: <span id="counter">040+</span></p>
+            <p><b>&gt;</b> status: <span class="blink">GEAR TRAIN ENGAGED_</span></p>
+          </div>
+
+        </div>
+
+
+        <div class="terminal-footer">
+
+          <span>
+            DRAG / SCROLL TO EXPLORE
+          </span>
+
+          <span>
+            SYS.MECH.07
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EVENTS
+    ========================== -->
+
+    <section
+      id="events"
+      class="content-section">
+
+
+      <div class="section-heading">
+
+
+        <span>
+          // MECHANICAL COMPETITION TRACKS
+        </span>
+
+
+        <h2>
+
+          OFFICIAL
+
+          <strong>
+            MECH EVENTS
+          </strong>
+
+        </h2>
+
+
+        <p>
+
+          Five events presented by
+          the Department of Mechanical Engineering.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="events-grid">
+
+
+        <!-- =========================
+             EVENT 01
+        ========================== -->
+
+        <article class="event-card">
+
+
+          <div class="event-top">
+
+            <b>01</b>
+
+            <span>
+              DESIGN // PRESENTATION
+            </span>
+
+          </div>
+
+
+          <h3>
+            PAPER PRESENTATION
+          </h3>
+
+
+          <p>
+
+            Present your technical research, ideas and engineering
+            solutions before the Mechanical Engineering panel.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ MECHANICAL DEPARTMENT
+            </span>
+
+            <span>
+              ▣ 10 OCT 2026
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+
+                'Paper Presentation',
+
+                'As per event schedule',
+
+                'Mechanical Engineering Department',
+
+                [
+
+                  'Paper presentation event for the Mechanical Engineering Department',
+
+                  'Last date for paper submission: 10 Oct 2026',
+
+                  'Refer to the event desk for the detailed presentation format and rules',
+
+                  'Original work is expected'
+
+                ]
+
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Paper Presentation'
+              )">
+
+              REGISTER
+
+            </button>
+
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =========================
+             EVENT 02
+        ========================== -->
+
+        <article class="event-card">
+
+
+          <div class="event-top">
+
+            <b>02</b>
+
+            <span>
+              ENGINEERING // EXPERT
+            </span>
+
+          </div>
+
+
+          <h3>
+
+            MR. MACHINIST
+
+            <i>
+              (ENGINEERING EXPERT)
+            </i>
+
+          </h3>
+
+
+          <p>
+
+            Test your practical mechanical engineering knowledge
+            and interact with an engineering expert in the
+            Mr. Machinist challenge.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ ENGINEERING EVENT
+            </span>
+
+            <span>
+              ◇ ENGINEERING EXPERT
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+
+                'Mr. Machinist (Engineering Expert)',
+
+                'As per event schedule',
+
+                'Mechanical Engineering Department',
+
+                [
+
+                  'Event: Mr. Machinist (Engineering Expert)',
+
+                  'Detailed challenge format will be provided by the event coordinators',
+
+                  'Refer to the event desk for participation rules',
+
+                  'Follow all instructions given by the coordinators'
+
+                ]
+
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Mr. Machinist (Engineering Expert)'
+              )">
+
+              REGISTER
+
+            </button>
+
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =========================
+             EVENT 03
+        ========================== -->
+
+        <article class="event-card">
+
+
+          <div class="event-top">
+
+            <b>03</b>
+
+            <span>
+              DRAFTING // ENGINEERING DRAWING
+            </span>
+
+          </div>
+
+
+          <h3>
+
+            MASTER DRAFTSMAN
+
+            <i>
+              (MANUAL 2D DRAWING)
+            </i>
+
+          </h3>
+
+
+          <p>
+
+            Demonstrate your drafting accuracy and engineering
+            drawing skills through a manual 2D drawing challenge.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ TECHNICAL DRAWING
+            </span>
+
+            <span>
+              ▣ MANUAL 2D DRAWING
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+
+                'Master Draftsman (Manual 2D Drawing)',
+
+                'As per event schedule',
+
+                'Mechanical Engineering Department',
+
+                [
+
+                  'Event: Master Draftsman (Manual 2D Drawing)',
+
+                  'Manual 2D drawing is the core challenge',
+
+                  'Refer to the event desk for materials and detailed rules',
+
+                  'Follow all instructions given by the coordinators'
+
+                ]
+
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Master Draftsman (Manual 2D Drawing)'
+              )">
+
+              REGISTER
+
+            </button>
+
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =========================
+             EVENT 04
+        ========================== -->
+
+        <article class="event-card">
+
+
+          <div class="event-top">
+
+            <b>04</b>
+
+            <span>
+              COMMUNICATION // TECH TALK
+            </span>
+
+          </div>
+
+
+          <h3>
+
+            EXTEMPORE
+
+            <i>
+              (TECH TALK)
+            </i>
+
+          </h3>
+
+
+          <p>
+
+            Showcase your technical communication skills
+            through an Extempore presentation on a
+            technology-related topic.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ TECHNICAL TALK
+            </span>
+
+            <span>
+              ⚙ TECH TALK
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+
+                'Extempore (Tech Talk)',
+
+                'As per event schedule',
+
+                'Mechanical Engineering Department',
+
+                [
+
+                  'Event: Extempore (Tech Talk)',
+
+                  'Topic and detailed format will be provided by the event coordinators',
+
+                  'Participants should be prepared for a technology-focused talk',
+
+                  'Refer to the event desk for detailed rules'
+
+                ]
+
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Extempore (Tech Talk)'
+              )">
+
+              REGISTER
+
+            </button>
+
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =========================
+             EVENT 05
+        ========================== -->
+
+        <article class="event-card">
+
+
+          <div class="event-top">
+
+            <b>05</b>
+
+            <span>
+              QUIZ // TECHNICAL CHALLENGE
+            </span>
+
+          </div>
+
+
+          <h3>
+
+            BRAIN BOLT
+
+            <i>
+              (TECHNICAL QUIZ CHALLENGE)
+            </i>
+
+          </h3>
+
+
+          <p>
+
+            Put your mechanical engineering knowledge to the test
+            in Brain Bolt, the department's technical quiz challenge.
+
+          </p>
+
+
+          <div class="meta">
+
+            <span>
+              ◷ ENGINEERING LOGIC
+            </span>
+
+            <span>
+              ◎ TECHNICAL QUIZ
+            </span>
+
+          </div>
+
+
+          <div class="actions">
+
+
+            <button
+              class="outline-btn"
+              onclick="openRulesModal(
+
+                'Brain Bolt (Technical Quiz Challenge)',
+
+                'As per event schedule',
+
+                'Mechanical Engineering Department',
+
+                [
+
+                  'Event: Brain Bolt (Technical Quiz Challenge)',
+
+                  'Technical quiz based on Mechanical Engineering concepts',
+
+                  'Refer to the event desk for detailed format and rules',
+
+                  'Follow all instructions given by the coordinators'
+
+                ]
+
+              )">
+
+              VIEW RULES
+
+            </button>
+
+
+            <button
+              class="cyber-btn small"
+              onclick="openRegisterModal(
+                'Brain Bolt (Technical Quiz Challenge)'
+              )">
+
+              REGISTER
+
+            </button>
+
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         COORDINATORS
+    ========================== -->
+
+    <section
+      id="coordinators"
+      class="content-section coordinators">
+
+
+      <div class="section-heading">
+
+
+        <span>
+          // MECHANICAL DEPARTMENT CONTACTS
+        </span>
+
+
+        <h2>
+
+          MECH
+
+          <strong>
+            COMMAND CENTRE
+          </strong>
+
+        </h2>
+
+
+        <p>
+
+          Contact the Mechanical Engineering coordinators
+          for event registration, guidelines and venue assistance.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="coord-grid">
+
+
+        <!-- STAFF COORDINATOR -->
+
+        <div class="coord-card glass">
+
+
+          <span>
+            STAFF CO-ORDINATOR
+          </span>
+
+
+          <h3>
+            Mr. S. Vijayakumar
+          </h3>
+
+
+          <p>
+            AP / MECH
+          </p>
+
+
+          <div>
+
+
+            <a href="tel:9629723720">
+
+              ☎ 96297 23720
+
+            </a>
+
+
+            <a
+              href="https://wa.me/919629723720"
+              target="_blank">
+
+              ◉ WHATSAPP
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- STUDENT COORDINATOR -->
+
+        <div class="coord-card glass">
+
+
+          <span>
+            STUDENT CO-ORDINATOR
+          </span>
+
+
+          <h3>
+            Mr. N. Jayanishanth
+          </h3>
+
+
+          <p>
+            IV / MECH
+          </p>
+
+
+          <div>
+
+
+            <a href="tel:7200116278">
+
+              ☎ 72001 16278
+
+            </a>
+
+
+            <a
+              href="https://wa.me/917200116278"
+              target="_blank">
+
+              ◉ WHATSAPP
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+
+  <!-- =========================
+       REGISTRATION MODAL
+  ========================== -->
+
+  <div
+    class="modal-overlay"
+    id="registerModal">
+
+
+    <div class="modal glass">
+
+
+      <button
+        class="close"
+        onclick="closeModals()">
+
+        ×
+
+      </button>
+
+
+      <span class="modal-tag">
+
+        // OFFICIAL REGISTRATION
+
+      </span>
+
+
+      <h2>
+
+        ACCESS
+
+        <strong>
+          GRANTED
+        </strong>
+
+      </h2>
+
+
+      <p id="registerText">
+
+        Registration for Mechanical Engineering events.
+
+      </p>
+
+
+      <div class="modal-info">
+
+        REGISTRATION FEE:
+
+        <strong>
+          ₹150/- ONLY
+        </strong>
+
+      </div>
+
+
+      <a
+        class="cyber-btn full"
+        href="https://rpsitsymposium.netlify.app"
+        target="_blank">
+
+        OPEN REGISTRATION FORM →
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       RULES MODAL
+  ========================== -->
+
+  <div
+    class="modal-overlay"
+    id="rulesModal">
+
+
+    <div class="modal glass">
+
+
+      <button
+        class="close"
+        onclick="closeModals()">
+
+        ×
+
+      </button>
+
+
+      <span class="modal-tag">
+
+        // EVENT PROTOCOL
+
+      </span>
+
+
+      <h2 id="rulesTitle">
+
+        EVENT DETAILS
+
+      </h2>
+
+
+      <div class="rule-meta">
+
+
+        <span id="rulesTime"></span>
+
+
+        <span id="rulesVenue"></span>
+
+
+      </div>
+
+
+      <ul id="rulesBody"></ul>
+
+
+      <button
+        class="cyber-btn full"
+        onclick="closeModals()">
+
+        ACKNOWLEDGE PROTOCOL
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
